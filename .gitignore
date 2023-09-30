@@ -1,1 +1,3 @@
 myenv/*
+build/*
+dist/*
