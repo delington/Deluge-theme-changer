@@ -1,6 +1,6 @@
 # Deluge Theme changer
 
-The Deluge Theme changer is a simple Python application built using the tkinter library that allows you to easily change the theme of the Deluge client version 2.0 and above. You can switch between a dark theme and a light theme with just a few clicks.
+The Deluge Theme changer is a simple Python application built using the tkinter library that allows you to easily change the theme of the Deluge client version 2.0 and above. You can switch between a dark theme and a light(default) theme with just a few clicks.
 
 
 <img src="img/dark_theme.png" height="350" width="600"/>
@@ -8,7 +8,7 @@ The Deluge Theme changer is a simple Python application built using the tkinter 
 ## Features
 
 - Change the theme of your Deluge client quickly and easily.
-- Supports both **dark** and **light** themes.
+- Supports both **dark** and **light**(default) themes.
 - Provides a user-friendly graphical interface.
 
 ## Requirements
