@@ -20,7 +20,7 @@ Before using the Deluge theme changer, ensure that you have the following:
 
 ## Installation
 
-Use one of the `Releases` (only Windows) or install as a `python app`:
+Use one of the [Releases](https://github.com/delington/Deluge-theme-changer/releases) (only Windows) or install as a `python app`:
 
 1. Clone or download this repository to your local machine.
 
