@@ -18,9 +18,9 @@ jobs:
     - name: Package Application
       uses: delington/Deluge-theme-changer@main
       with:
-        path: src
+        path: .
 
     - uses: actions/upload-artifact@v2
       with:
         name: theme-changer-app
-        path: src/dist
+        path: ./dist
