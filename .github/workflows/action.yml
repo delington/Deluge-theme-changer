@@ -25,4 +25,5 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
-        asset_path: ${{ github.workspace }}/dist/main.exe
+        name: main
+        path: ${{ github.workspace }}/dist/main.exe
