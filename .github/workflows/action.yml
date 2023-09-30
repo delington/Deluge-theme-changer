@@ -18,11 +18,11 @@ jobs:
     - name: Install dependencies
       run: pip install -r requirements.txt
 
-    - name: Build Executable
+    - name: Run PyInstaller
       run: pyinstaller --onefile main.py
       working-directory: ${{ github.workspace }}
 
     - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
-        path: ${{ github.workspace }}/dist/main.exe
+        asset_path: ${{ github.workspace }}/dist/main.exe
