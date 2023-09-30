@@ -15,8 +15,8 @@ The Deluge Theme changer is a simple Python application built using the tkinter 
 
 Before using the Deluge theme changer, ensure that you have the following:
 
-- Python 3.x installed on your system.
-- The Deluge client version 2.0 or above installed.
+- Python 3.x installed on your system
+- The Deluge client version 2.0 or above installed (was tried on Deluge v2.1.1)
 
 ## Installation
 
