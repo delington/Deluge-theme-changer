@@ -15,6 +15,9 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+
     - name: Build Executable
       run: pyinstaller --onefile main.py
       working-directory: ${{ github.workspace }}
