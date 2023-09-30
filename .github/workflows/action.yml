@@ -9,18 +9,18 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-    - name: Package Application
-      uses: delington/Deluge-theme-changer@main
-      with:
-        path: .
+    - name: Build Executable
+      run: pyinstaller --onefile main.py
+      working-directory: ${{ github.workspace }}
 
-    - uses: actions/upload-artifact@v2
+    - name: Theme changer
+      uses: actions/upload-artifact@v2
       with:
-        name: theme-changer-app
-        path: ./dist
+        name: main
+        path: dist/
