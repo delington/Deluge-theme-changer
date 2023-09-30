@@ -1,6 +1,8 @@
 import os
 import tkinter as tk
 from tkinter import filedialog, messagebox
+import subprocess
+import psutil
 
 # Constants
 WINDOW_TITLE = "Deluge Theme Installer"
@@ -37,6 +39,12 @@ def apply_theme(dark_theme):
                 settings_ini_file.write("[Settings]\n")
                 settings_ini_file.write(f"gtk-application-prefer-dark-theme={str(dark_theme).lower()}\n")
             result_label.config(text="Changes applied")
+            show_checkmark(True)
+            restart_option = messagebox.askyesno("Restart Deluge", "Please restart your Deluge client to apply changes.\nDo you want to restart Deluge desktop?")
+            if restart_option:
+                close_and_restart_deluge(deluge_install_folder)
+        else:
+            show_checkmark(False)
     else:
         gtk_3_0_folder = os.path.join(deluge_install_folder, SHARE_FOLDER, GTK_3_0_FOLDER)
         if not os.path.exists(gtk_3_0_folder):
@@ -45,7 +53,43 @@ def apply_theme(dark_theme):
         with open(settings_ini_path, 'w') as settings_ini_file:
             settings_ini_file.write("[Settings]\n")
             settings_ini_file.write(f"gtk-application-prefer-dark-theme={str(dark_theme).lower()}\n")
-        result_label.config(text=f"Changes applied ${CHECKMARK_SYMBOL}")
+        result_label.config(text="Changes applied")
+        show_checkmark(True)
+        restart_option = messagebox.askyesno("Restart Deluge", "Please restart your Deluge client to apply changes.\nDo you want to restart Deluge desktop?")
+        if restart_option:
+            close_and_restart_deluge(deluge_install_folder)
+
+def close_and_restart_deluge(deluge_folder):
+    deluge_exe_path = os.path.join(deluge_folder, "deluge.exe")
+    if os.path.exists(deluge_exe_path):
+        # Attempt to close Deluge gracefully
+        try:
+            deluge_process = get_deluge_process()
+            if deluge_process:
+                deluge_process.terminate()
+                deluge_process.wait()
+            subprocess.Popen([deluge_exe_path])
+        except Exception as e:
+            messagebox.showerror("Error", f"Failed to restart Deluge desktop: {str(e)}")
+    else:
+        messagebox.showerror("Error", "Deluge desktop (deluge.exe) not found in the selected folder.")
+
+def get_deluge_process():
+    for process in psutil.process_iter(attrs=['pid', 'name']):
+        try:
+            process_name = process.info['name']
+            if process_name == 'deluge.exe':
+                return psutil.Process(process.info['pid'])
+        except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
+            pass
+    return None
+
+def show_checkmark(show):
+    if show:
+        checkmark_label.config(text=CHECKMARK_SYMBOL)
+        checkmark_label.grid(row=5, column=2, padx=20, pady=10)
+    else:
+        checkmark_label.grid_forget()
 
 def quit_application():
     window.quit()
