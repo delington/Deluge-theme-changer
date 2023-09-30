@@ -22,8 +22,7 @@ jobs:
       run: pyinstaller --onefile main.py
       working-directory: ${{ github.workspace }}
 
-    - name: Theme changer
+    - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
-        name: main
-        path: dist/main.exe
+        path: ${{ github.workspace }}/dist/main.exe
