@@ -97,6 +97,7 @@ entry_var = tk.StringVar()
 folder_entry = tk.Entry(window, textvariable=entry_var, width=40)  # Increase width here
 folder_entry.grid(row=1, column=0, columnspan=2, padx=20, pady=10)
 
+messagebox.showinfo("Installation folder", "Please select Deluge installation folder.");
 browse_button = tk.Button(window, text=BROWSE_BUTTON_TEXT, command=select_install_folder)
 browse_button.grid(row=1, column=2, padx=20, pady=10)
 
