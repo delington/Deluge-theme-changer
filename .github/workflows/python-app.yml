@@ -21,6 +21,12 @@ jobs:
     - name: Build .exe
       run: pyinstaller --onefile main.py
 
+    - name: Upload artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: Python_app
+        path: dist/main.exe
+
     - name: Create Github release
       id: create-new-release
       uses: actions/create-release@v1
