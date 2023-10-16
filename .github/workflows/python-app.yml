@@ -25,7 +25,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: Python_app
-        path: dist/main.exe
+        path: Deluge-theme-changer/dist/main.exe
 
     - name: Create Github release
       id: create-new-release
@@ -44,6 +44,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create-new-release.outputs.upload_url }}
-        asset_path: dist/main.exe
+        asset_path: Deluge-theme-changer/dist/main.exe
         asset_name: main.exe
         asset_content_type: application/zip
