@@ -2,14 +2,45 @@
 
 The Deluge Theme changer is a simple Python application built using the tkinter library that allows you to easily change the theme of the Deluge client version 2.0 and above. You can switch between a dark theme and a light(default) theme with just a few clicks.
 
-
+- ### Dark theme
 <img src="img/dark_theme.png" height="350" width="600"/>
+
+- ### Custom theme
+<img src="img/orange_theme.png" height="350" width="600"/>
 
 ## Features
 
 - Change the theme of your Deluge client quickly and easily.
-- Supports both **dark** and **light**(default) themes.
+- `Supports both dark and light(default) and custom (color picker) themes.`
 - Provides a user-friendly graphical interface.
+
+## Usage
+
+1. Run the Deluge theme changer (.exe on Windows or .py with python)
+
+2. The application will open, and you will see the following options:
+
+<img src="img/GUI.png" height="200" width="350"/>
+
+   - **Select Deluge Installation Folder:** Click the "Browse" button to choose the folder where your Deluge client is installed. This folder typically contains the `settings.ini` file.
+
+   - **Apply Dark Theme:** Click this button to set the Deluge client to use the dark theme.
+
+   - **Apply Light Theme:** Click this button to set the Deluge client to use the light theme.
+
+   - **Quit:** Click this button to exit the application.
+
+   - **Custom Theme**:
+
+      - Choose colors for background, text and line selection, then Apply
+
+   <img src="img/GUI2.png" height="70" width="500"/>
+
+    
+
+3. After selecting the Deluge installation folder and applying the theme, the application will display a confirmation message indicating that the changes have been applied.
+
+4. You can now launch your Deluge client, and it will use the selected theme (dark or light).
 
 ## Requirements
 
@@ -39,24 +70,6 @@ Use one of the [Releases](https://github.com/delington/Deluge-theme-changer/rele
    ```bash
    python main.py
    ```
-
-## Usage
-
-1. Run the Deluge theme changer using the steps mentioned in the Installation section.
-
-2. The application will open, and you will see the following options:
-
-   - **Select Deluge Installation Folder:** Click the "Browse" button to choose the folder where your Deluge client is installed. This folder typically contains the `settings.ini` file.
-
-   - **Apply Dark Theme:** Click this button to set the Deluge client to use the dark theme.
-
-   - **Apply Light Theme:** Click this button to set the Deluge client to use the light theme.
-
-   - **Quit:** Click this button to exit the application.
-
-3. After selecting the Deluge installation folder and applying the theme, the application will display a confirmation message indicating that the changes have been applied.
-
-4. You can now launch your Deluge client, and it will use the selected theme (dark or light).
 
 ## Notes
 

@@ -1,0 +1,33 @@
+name: Build and Release
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.10
+
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+
+    - name: Build .exe
+      run: pyinstaller --onefile main.py  # Replace your_script.py with your app's entry point
+
+    - name: Create Release
+      id: create_release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: dist/your_script  # Replace your_script with the name of the .exe file you want to release
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

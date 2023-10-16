@@ -1,3 +1,4 @@
 myenv/*
 build/*
 dist/*
+.vscode/easycode.ignore
