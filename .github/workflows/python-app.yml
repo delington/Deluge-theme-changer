@@ -36,6 +36,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create-new-release.outputs.upload_url }}
-        asset_path: ./main.exe
+        asset_path: ./dist/main.exe
         asset_name: main-v${{ github.run_number }}.exe
         asset_content_type: application/x-msdownload
