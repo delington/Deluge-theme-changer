@@ -27,8 +27,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: ${{ github.event.head_commit.message }}
-        release_name: ${{ github.event.head_commit.message }}
+        tag_name: ${{ github.event.head_commit.id }}
+        release_name: ${{ github.event.head_commit.id }}
         draft: false
         prerelease: false
 
