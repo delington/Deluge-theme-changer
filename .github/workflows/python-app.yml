@@ -27,8 +27,10 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: ${{ github.run_number }}
-        release_name: ${{ github.run_number }}
+        tag_name: ${{ github.event.head_commit.message }}
+        release_name: ${{ github.event.head_commit.message }}
+        draft: false
+        prerelease: false
 
     - name: Upload release asset
       uses: actions/upload-release-asset@v1
@@ -36,6 +38,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create-new-release.outputs.upload_url }}
-        asset_path: ./dist/main.exe
-        asset_name: main-v${{ github.run_number }}.exe
-        asset_content_type: application/x-msdownload
+        asset_path: dist/main.exe
+        asset_name: main.exe
+        asset_content_type: application/zip
