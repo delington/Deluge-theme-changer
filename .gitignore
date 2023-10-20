@@ -2,3 +2,4 @@ myenv/*
 build/*
 dist/*
 .vscode/easycode.ignore
+__pycache__/*
