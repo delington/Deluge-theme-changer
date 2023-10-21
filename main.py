@@ -12,7 +12,7 @@ from constants import (
     FOLDER_LABEL_TEXT,
     QUIT_BUTTON_TEXT,
     RESULT_LABEL_INITIAL_TEXT,
-    WINDOW_TITLE,
+    WINDOW_TITLE
 )
 
 def select_install_folder():
