@@ -17,8 +17,9 @@ The Deluge Theme changer is a simple Python application built using the tkinter 
 ## Usage
 
 1. Run the Deluge theme changer (.exe on Windows or .py with python)
+   - if your Deluge install folder is on Windows system drive (usually C:) then you might need to `run as admin`
 
-2. The application will open, and you will see the following options:
+3. The application will open, and you will see the following options:
 
 <img src="img/GUI.png" height="200" width="350"/>
 
